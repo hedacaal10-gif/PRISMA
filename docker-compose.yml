@@ -10,7 +10,7 @@ services:
     environment:
       - PORT=8080
       - PRISMA_ENV=production
-      - DATABASE_URL=postgresql://prisma_admin:SecurePass2026@postgres-db:5432/prisma_prod
+      - DATABASE_URL=postgresql://${POSTGRES_USER:-prisma_admin}:${POSTGRES_PASSWORD:-change_me_in_prod}@postgres-db:5432/${POSTGRES_DB:-prisma_prod}
     depends_on:
       - postgres-db
     restart: always
@@ -18,9 +18,10 @@ services:
   postgres-db:
     image: postgres:15-alpine
     environment:
-      POSTGRES_USER: prisma_admin
-      POSTGRES_PASSWORD: SecurePass2026
-      POSTGRES_DB: prisma_prod
+      POSTGRES_USER: ${POSTGRES_USER:-prisma_admin}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-change_me_in_prod}
+      POSTGRES_DB: ${POSTGRES_DB:-prisma_prod}
+
     ports:
       - "5432:5432"
     volumes:
