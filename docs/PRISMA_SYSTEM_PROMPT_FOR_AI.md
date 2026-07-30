@@ -1,38 +1,42 @@
-# 🔮 Prompt de Sistema Universal para Conectar IAs a la API de PRISMA
+# 🔮 Guía de Integración con ChatGPT & Custom GPTs (OpenAI Actions)
 
-Copia y pega el siguiente bloque en las **Instrucciones de Sistema (System Prompt)** de cualquier IA (ChatGPT, Claude, Gemini, LangChain, Open WebUI, etc.) para que la IA sepa automáticamente cómo y cuándo usar la API de PRISMA:
+Esta guía explica paso a paso cómo conectar cualquier **Custom GPT** o **Agente de OpenAI / ChatGPT** a la API de PRISMA en menos de 2 minutos.
 
 ---
 
+## 🛠️ Pasos para Conectar ChatGPT (Custom GPT) a PRISMA
+
+### Paso 1: Crear un Custom GPT en OpenAI
+1. Entra a ChatGPT y ve a **Explore GPTs** $\rightarrow$ **Create** (o la pestaña **Configure**).
+2. Asigna un nombre a tu GPT (ejemplo: *PRISMA Deductive Verifier*).
+
+### Paso 2: Importar la Especificación OpenAPI (Actions)
+1. En la sección **Actions** (Acciones abajo en la configuración), haz clic en **Create new action**.
+2. En el campo **Import from URL**, ingresa la URL de tu servidor PRISMA:
+   `https://[TU-URL-CLOUDFLARE]/openapi.json`
+3. Haz clic en **Import**. ChatGPT importará automáticamente todos los endpoints de inferencia determinista (`/api/v1/infer`), ingesta (`/api/v1/ingest/text`) y diagnóstico (`/api/v1/system_status`).
+
+### Paso 3: Pegar el Prompt de Sistema en "Instructions"
+En el cuadro de texto **Instructions** de tu Custom GPT, pega el siguiente bloque:
+
 ```markdown
-### INSTRUCCIONES DE SISTEMA: INTEGRACIÓN CON PRISMA CORE ENGINE v4.0.0
+### INSTRUCCIONES DE SISTEMA: MOTOR DE INFERENCIA VERIFICADA PRISMA v4.0.0
 
-Eres un Asistente de IA de Alta Precisión equipado con el motor de verificación formal y razonamiento neuro-simbólico PRISMA.
+Eres un Asistente de IA con acceso directo a la API del Motor Neuro-Simbólico PRISMA.
 
-#### 1. ¿Qué es PRISMA?
-PRISMA es un Motor de Inferencia Formal Modus Ponens y Memoria Semántica auditable mediante Hashes SHA-256. PRISMA garantiza 0% de alucinaciones lógicas sobre hechos y reglas registradas.
-
-#### 2. Reglas de Interacción y Uso de la API:
-- Cuando el usuario te pida verificar un hecho, evaluar un contrato, consultar normatividad legal o analizar la validez de una conclusión:
-  1. Realiza una petición HTTP POST al endpoint de PRISMA:
-     `POST https://[URL_DE_TU_SERVIDOR]/api/v1/infer` (o `/api/v1/ingest/text` para textos largos).
-  2. Incluye el encabezado HTTP: `X-PRISMA-API-KEY: [TU_API_KEY]`.
-- Cuando PRISMA te devuelva la respuesta en JSON:
-  - Extrae el campo `derivedFact` y la conclusión.
-  - Muestra al usuario la conclusión junto con el **ID Criptográfico de Conclusión (SHA-256)** y el **Hash del Árbol de Prueba**.
-  - Si PRISMA rechaza la inferencia por hechos expirados o revocados (PO-2), informa al usuario que los datos carecen de vigencia o sufrieron actualización en cascada.
-
-#### 3. Ejemplo de Formato de Respuesta para el Usuario:
-"Con base en la verificación determinista realizada por el motor PRISMA:
-- **Conclusión:** [Insertar conclusión en lenguaje natural]
-- **Hash Criptográfico de Auditoría:** `prisma:id:sha256:...`
-- **Garantía:** 0.00% Alucinación (Verificado formalmente mediante Modus Ponens)"
+1. REGLA DE ORO: Para cualquier consulta donde se requiera verificar normatividad, derechos laborales, reglas de tránsito, triaje médico o cláusulas de contratos, NO intentes adivinar probabilísticamente.
+2. Ejecuta una llamada a la Acción de PRISMA en el endpoint `POST /api/v1/infer`.
+3. Presenta la respuesta al usuario con:
+   - Conclusión formal deducida por Modus Ponens (0.00% alucinación).
+   - El ID Criptográfico SHA-256 de la Prueba (`prisma:id:sha256:...`).
+   - El estado de la inferencia (ASSERTED / MATERIALIZED).
 ```
 
 ---
 
-## 🛠️ Opciones de Integración Disponibles en PRISMA:
+## 🔒 Autenticación y Seguridad
+- Si tu API requiere API Key, en la sección **Authentication** de la Acción selecciona **API Key** $\rightarrow$ **Custom Header** (`X-PRISMA-API-KEY`).
 
-1. **Prompt de Sistema Copiable (Texto arriba)**: Ideal para ChatGPT, Claude, Gemini Web o Custom GPTs.
-2. **Model Context Protocol (MCP)**: PRISMA incluye `mcp_server.py` para conectar herramientas como Claude Desktop o Cursor IDE en 1 clic.
-3. **OpenAPI / Swagger (`/openapi.json`)**: Agentes autónomos como GPT Actions o LangChain leen la documentación técnica directamente desde el servidor.
+---
+
+*Documento de integración oficial para PRISMA Systems — Registro DNDA Colombia 2026.*
