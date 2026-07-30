@@ -99,7 +99,12 @@ memory.save_context(
 # Si un dato es invalidado posteriormente, PRISMA lo purga automáticamente del contexto del LLM
 ```
 
+> [!WARNING]
+> **Nota de Recomendación sobre Cuotas de LLMs Externos:**  
+> Al realizar pruebas masivas o ingesta de documentos en gran volumen (como en el benchmark multisectorial de 13.7M operaciones), se recomienda priorizar el **Fast Path (SLM Local)** de PRISMA, el cual procesa deducciones en **1ms sin consumo de tokens**. Ejecutar millones de peticiones masivas directamente contra APIs externas (como Claude o OpenAI) puede agotar rápidamente sus límites y cuotas diarias gratuitas. Se aconseja reservar las llamadas a APIs de LLM externas exclusivamente para análisis de texto complejo o consultas puntuales que lo requieran.
+
 ---
+
 
 ## 🎁 Acceso Anticipado Pre-Lanzamiento (Pruebas 100% Gratuitas)
 
