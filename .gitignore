@@ -1,0 +1,40 @@
+# Environment & Local Credentials
+.env
+.env.local
+.env.*.local
+
+# CORE BACKEND SOURCE CODE & IMPLEMENTATIONS (PROTECTED & PRIVATE)
+packages/
+scratch/
+reference-tests/
+
+# SQLite Databases & WAL Files
+*.db
+*.db-wal
+*.db-shm
+prisma_knowledge.db
+colombia_transit_law.db
+langchain_openai_demo.db
+quickstart_prisma.db
+
+# Python & Cache Files
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+build/
+dist/
+*.so
+.pytest_cache/
+
+# Logs & Temporary Files
+*.log
+scratch/server_error.log
+lyra_debug_log.txt
+
+# OS & IDE Files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

@@ -1,0 +1,45 @@
+{
+  "id": "prisma:example:002-multi-step",
+  "description": "Multi-Step Reasoning: Socrates is Human -> Human is Mammal -> Mammal is Mortal -> Socrates is Mortal",
+  "knowledgeObjects": [
+    {
+      "id": "prisma:fact:socrates_human",
+      "type": "prisma:type:fact",
+      "expression": { "kind": "PredicateAssertion", "operator": "is_a", "subject": "entity:socrates", "value": "entity:human" },
+      "context": "prisma:context:philosophy",
+      "temporalValidity": ["-INF", "INF"],
+      "provenance": { "issuer": "did:prisma:history", "method": "DirectObservation" },
+      "dependencies": [],
+      "integrityState": "ASSERTED"
+    },
+    {
+      "id": "prisma:rule:human_mammal",
+      "type": "prisma:type:rule",
+      "expression": { "kind": "ImplicationRule", "operator": "implies", "antecedent": { "operator": "is_a", "subject": "?x", "value": "entity:human" }, "consequent": { "operator": "is_a", "subject": "?x", "value": "entity:mammal" } },
+      "context": "prisma:context:biology",
+      "temporalValidity": ["-INF", "INF"],
+      "provenance": { "issuer": "did:prisma:taxonomy", "method": "LegislativeAxiom" },
+      "dependencies": [],
+      "integrityState": "ASSERTED"
+    },
+    {
+      "id": "prisma:rule:mammal_mortal",
+      "type": "prisma:type:rule",
+      "expression": { "kind": "ImplicationRule", "operator": "implies", "antecedent": { "operator": "is_a", "subject": "?x", "value": "entity:mammal" }, "consequent": { "operator": "is_mortal", "subject": "?x", "value": true } },
+      "context": "prisma:context:biology",
+      "temporalValidity": ["-INF", "INF"],
+      "provenance": { "issuer": "did:prisma:biology", "method": "LegislativeAxiom" },
+      "dependencies": [],
+      "integrityState": "ASSERTED"
+    }
+  ],
+  "expectedQuery": { "kind": "QUERY", "operator": "is_mortal", "subject": "entity:socrates", "context": "prisma:context:philosophy" },
+  "expectedProof": {
+    "kind": "DeductiveProofTree",
+    "operator": "ChainedModusPonens",
+    "goal": "is_mortal(entity:socrates) == true",
+    "satisfiedPremises": ["prisma:fact:socrates_human", "prisma:rule:human_mammal", "prisma:rule:mammal_mortal"]
+  },
+  "expectedResult": true,
+  "auditTrail": { "inferenceSteps": 2, "lineageVerified": true, "proofValid": true }
+}

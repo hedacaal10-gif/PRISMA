@@ -1,0 +1,35 @@
+{
+  "id": "prisma:example:003-temporal",
+  "description": "Temporal Knowledge: Juan lives in Bogota [2020-2024], lives in Medellin [2024-INF]",
+  "knowledgeObjects": [
+    {
+      "id": "prisma:fact:juan_bogota",
+      "type": "prisma:type:fact",
+      "expression": { "kind": "PredicateAssertion", "operator": "residesIn", "subject": "person:juan", "value": "city:bogota" },
+      "context": "prisma:context:geo:co",
+      "temporalValidity": ["2020-01-01T00:00:00Z", "2024-01-01T00:00:00Z"],
+      "provenance": { "issuer": "did:prisma:census", "method": "DirectObservation" },
+      "dependencies": [],
+      "integrityState": "ASSERTED"
+    },
+    {
+      "id": "prisma:fact:juan_medellin",
+      "type": "prisma:type:fact",
+      "expression": { "kind": "PredicateAssertion", "operator": "residesIn", "subject": "person:juan", "value": "city:medellin" },
+      "context": "prisma:context:geo:co",
+      "temporalValidity": ["2024-01-01T00:00:00Z", "INF"],
+      "provenance": { "issuer": "did:prisma:census", "method": "DirectObservation" },
+      "dependencies": [],
+      "integrityState": "ASSERTED"
+    }
+  ],
+  "expectedQuery": { "kind": "WHEN", "operator": "residesIn", "subject": "person:juan", "atTime": "2026-07-26T00:00:00Z" },
+  "expectedProof": {
+    "kind": "DeductiveProofTree",
+    "operator": "TemporalLookup",
+    "goal": "residesIn(person:juan) == city:medellin",
+    "satisfiedPremises": ["prisma:fact:juan_medellin"]
+  },
+  "expectedResult": "city:medellin",
+  "auditTrail": { "historicalQueryValid": true, "futureQueryValid": true }
+}

@@ -1,0 +1,35 @@
+{
+  "id": "prisma:example:005-contradiction",
+  "description": "Explicit Contradiction Object generation without deleting facts",
+  "knowledgeObjects": [
+    {
+      "id": "prisma:fact:light_on",
+      "type": "prisma:type:fact",
+      "expression": { "kind": "PredicateAssertion", "operator": "state", "subject": "device:light1", "value": "ON" },
+      "context": "prisma:context:iot:lab",
+      "temporalValidity": ["2026-07-26T08:00:00Z", "INF"],
+      "provenance": { "issuer": "did:prisma:sensor1", "method": "DirectObservation" },
+      "dependencies": [],
+      "integrityState": "ASSERTED"
+    },
+    {
+      "id": "prisma:fact:light_off",
+      "type": "prisma:type:fact",
+      "expression": { "kind": "PredicateAssertion", "operator": "state", "subject": "device:light1", "value": "OFF" },
+      "context": "prisma:context:iot:lab",
+      "temporalValidity": ["2026-07-26T08:00:00Z", "INF"],
+      "provenance": { "issuer": "did:prisma:sensor2", "method": "DirectObservation" },
+      "dependencies": [],
+      "integrityState": "ASSERTED"
+    }
+  ],
+  "expectedContradictionObject": {
+    "id": "prisma:contradiction:sha256:lab_light_conflict",
+    "type": "prisma:type:contradiction",
+    "conflictingObjects": ["prisma:fact:light_on", "prisma:fact:light_off"],
+    "context": "prisma:context:iot:lab",
+    "detectedBy": "did:prisma:validator",
+    "action": "EXPLICIT_CONTRADICTION_FLAG"
+  },
+  "auditTrail": { "factsPreserved": true, "contradictionExplicit": true }
+}

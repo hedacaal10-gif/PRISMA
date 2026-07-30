@@ -1,0 +1,11 @@
+{
+  "id": "prisma:example:010-real-world",
+  "description": "Multi-Domain Conformance Scenarios (Law, Medicine, History, Mathematics)",
+  "domains": [
+    { "domain": "Law", "scenario": "Tax Exemption Deduction", "factsCount": 25, "rulesCount": 5, "proofVerified": true },
+    { "domain": "Medicine", "scenario": "Drug Interaction Contraindication", "factsCount": 40, "rulesCount": 8, "proofVerified": true },
+    { "domain": "History", "scenario": "Dynasty Succession Sequence", "factsCount": 30, "rulesCount": 4, "proofVerified": true },
+    { "domain": "Mathematics", "scenario": "Prime Number Property Proof", "factsCount": 15, "rulesCount": 6, "proofVerified": true }
+  ],
+  "auditTrail": { "multiDomainVerified": true, "allProofsValid": true }
+}

@@ -1,0 +1,47 @@
+PRISMA PROPRIETARY ENTERPRISE LICENSE v4.0.0
+Copyright (c) 2026 PRISMA Systems. All Rights Reserved.
+
+Intellectual Property Registration:
+Dirección Nacional de Derecho de Autor (DNDA) — Colombia, 2026.
+
+===============================================================================
+TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
+===============================================================================
+
+1. OWNERSHIP & INTELLECTUAL PROPERTY:
+   The PRISMA Core Engine, specification, algorithms, AST structures, SHA-256 
+   semantic identity mechanics, and source code are the exclusive intellectual 
+   property of PRISMA Systems ("Licensor"). This Software is protected by 
+   international copyright laws, WIPO treaties, and Colombian Law 23 of 1982 
+   / Decision 351 of the Andean Community of Nations.
+
+2. EVALUATION & NON-COMMERCIAL USE:
+   You are hereby granted a non-exclusive, non-transferable, limited license to 
+   inspect, download, test, and evaluate the Software locally for personal, 
+   academic, and non-commercial evaluation purposes.
+
+3. COMMERCIAL USE RESTRICTIONS:
+   You may NOT, directly or indirectly:
+   a) Deploy, execute, or integrate the Software in production environments for 
+      commercial, corporate, or revenue-generating activities without a valid, 
+      paid Commercial License Agreement from Licensor.
+   b) Offer, re-sell, re-license, host, or provide the Software as a Software-as-a-Service 
+      (SaaS), Managed Cloud Service, API Platform, or cloud infrastructure product to third parties.
+   c) Modify, reverse engineer, decompile, or create unauthorized derivative works 
+      for commercial distribution.
+
+4. LIFETIME DURATION & PROPRIETARY MONOPOLY:
+   This License does NOT contain an automated transition date to open-source licenses. 
+   All commercial rights, monetization avenues, and distribution permissions remain 
+   exclusively under the sole control of Licensor for the full duration of copyright 
+   protection.
+
+5. COMMERCIAL LICENSING INQUIRIES:
+   To obtain a Commercial Production License, Enterprise On-Premise License, or custom 
+   B2B SLA Agreement, contact PRISMA Systems directly.
+
+===============================================================================
+THIS SOFTWARE IS PROVIDED BY THE LICENSOR "AS IS" WITHOUT EXPRESS OR IMPLIED 
+WARRANTIES OF ANY KIND. IN NO EVENT SHALL THE LICENSOR BE LIABLE FOR ANY CLAIM, 
+DAMAGES, OR OTHER LIABILITY ARISING FROM THE USE OR EXPLOITATION OF THIS SOFTWARE.
+===============================================================================

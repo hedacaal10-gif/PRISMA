@@ -1,0 +1,13 @@
+{
+  "id": "prisma:example:008-invalidation",
+  "description": "Cache Invalidation: Premise Fact Updated -> Materialized Knowledge Invalidated -> Rebuilt",
+  "initialState": { "factId": "prisma:fact:juan_edad", "state": "ASSERTED" },
+  "event": { "action": "INVALIDATE", "target": "prisma:fact:juan_edad" },
+  "cascadeResult": {
+    "materializedObjectId": "prisma:mat:sha256:juan_mayor_edad",
+    "oldState": "MATERIALIZED",
+    "newState": "INVALIDATED",
+    "reason": "Dependency 'prisma:fact:juan_edad' in INVALIDATED state"
+  },
+  "auditTrail": { "cascadeSuccess": true, "rebuildTriggered": true }
+}

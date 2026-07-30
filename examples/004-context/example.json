@@ -1,0 +1,35 @@
+{
+  "id": "prisma:example:004-context",
+  "description": "Context Boundaries: Majority age in Colombia (18) vs Japan (20)",
+  "knowledgeObjects": [
+    {
+      "id": "prisma:fact:majority_co",
+      "type": "prisma:type:fact",
+      "expression": { "kind": "PredicateAssertion", "operator": "majorityAge", "value": 18 },
+      "context": "prisma:context:jurisdiction:co",
+      "temporalValidity": ["-INF", "INF"],
+      "provenance": { "issuer": "did:prisma:law:co", "method": "LegislativeAxiom" },
+      "dependencies": [],
+      "integrityState": "ASSERTED"
+    },
+    {
+      "id": "prisma:fact:majority_jp",
+      "type": "prisma:type:fact",
+      "expression": { "kind": "PredicateAssertion", "operator": "majorityAge", "value": 20 },
+      "context": "prisma:context:jurisdiction:jp",
+      "temporalValidity": ["-INF", "INF"],
+      "provenance": { "issuer": "did:prisma:law:jp", "method": "LegislativeAxiom" },
+      "dependencies": [],
+      "integrityState": "ASSERTED"
+    }
+  ],
+  "expectedQuery": { "kind": "QUERY", "operator": "majorityAge", "context": "prisma:context:jurisdiction:co" },
+  "expectedProof": {
+    "kind": "DeductiveProofTree",
+    "operator": "ContextualLookup",
+    "goal": "majorityAge == 18 IN prisma:context:jurisdiction:co",
+    "satisfiedPremises": ["prisma:fact:majority_co"]
+  },
+  "expectedResult": 18,
+  "auditTrail": { "contextIsolated": true, "noCrossContradiction": true }
+}

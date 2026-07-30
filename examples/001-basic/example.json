@@ -1,0 +1,80 @@
+{
+  "id": "prisma:example:001-basic",
+  "description": "Basic Reasoning: Cat is_a Mammal, Mammal breathes -> Cat breathes",
+  "knowledgeObjects": [
+    {
+      "id": "prisma:fact:sha256:fact_cat_mammal",
+      "type": "prisma:type:fact",
+      "expression": {
+        "kind": "PredicateAssertion",
+        "operator": "is_a",
+        "subject": "entity:cat",
+        "value": "entity:mammal"
+      },
+      "context": "prisma:context:biology:taxonomy",
+      "temporalValidity": ["-INF", "INF"],
+      "provenance": { "issuer": "did:prisma:taxonomy", "method": "DirectObservation" },
+      "dependencies": [],
+      "integrityState": "ASSERTED"
+    },
+    {
+      "id": "prisma:fact:sha256:fact_mammal_breathes",
+      "type": "prisma:type:fact",
+      "expression": {
+        "kind": "PredicateAssertion",
+        "operator": "breathes",
+        "subject": "entity:mammal",
+        "value": true
+      },
+      "context": "prisma:context:biology:physiology",
+      "temporalValidity": ["-INF", "INF"],
+      "provenance": { "issuer": "did:prisma:physiology", "method": "DirectObservation" },
+      "dependencies": [],
+      "integrityState": "ASSERTED"
+    },
+    {
+      "id": "prisma:rule:sha256:rule_mammal_breathes",
+      "type": "prisma:type:rule",
+      "expression": {
+        "kind": "ImplicationRule",
+        "operator": "implies",
+        "antecedent": {
+          "operator": "is_a",
+          "subject": "?x",
+          "value": "entity:mammal"
+        },
+        "consequent": {
+          "operator": "breathes",
+          "subject": "?x",
+          "value": true
+        }
+      },
+      "context": "prisma:context:biology:physiology",
+      "temporalValidity": ["-INF", "INF"],
+      "provenance": { "issuer": "did:prisma:biology", "method": "LegislativeAxiom" },
+      "dependencies": [],
+      "integrityState": "ASSERTED"
+    }
+  ],
+  "expectedQuery": {
+    "kind": "QUERY",
+    "operator": "breathes",
+    "subject": "entity:cat",
+    "context": "prisma:context:biology:physiology"
+  },
+  "expectedProof": {
+    "kind": "DeductiveProofTree",
+    "operator": "ModusPonens",
+    "goal": "breathes(entity:cat) == true",
+    "satisfiedPremises": [
+      "prisma:fact:sha256:fact_cat_mammal",
+      "prisma:rule:sha256:rule_mammal_breathes"
+    ]
+  },
+  "expectedResult": true,
+  "auditTrail": {
+    "inferenceSteps": 1,
+    "lineageVerified": true,
+    "proofValid": true
+  }
+}

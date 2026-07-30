@@ -1,0 +1,112 @@
+{
+  "input_request": {
+    "query_type": "DeductiveInference",
+    "context": "ctx:transit_law",
+    "premises": [
+      "prisma:id:sha256:cf3a2b33dfd19d9517bb3489289ed8e89c4c608ace3459ecbae6d2bff5a52a73",
+      "prisma:id:sha256:afed0ae06aa641fad079c31ffad901141f151f6832bdf014402521d8474ca824"
+    ],
+    "applied_rule": "prisma:id:sha256:7261933fc143a799f415a69bf9b965ff502c5193399c0341a0f4a96e60ddf334"
+  },
+  "prisma_verification_engine": {
+    "protocol_version": "PRISMA PO-1 v4.0.0",
+
+    "execution_mode": "ModusPonensDeterministic",
+    "hallucination_rate": "0.00%",
+    "inference_time_us": 4.52,
+    "cache_status": "FRESH_DEDUCTION"
+  },
+  "verified_output": {
+    "derived_fact": {
+      "id": "prisma:id:sha256:0a62ae76050f0e56e41e86bc92548c0f2acb76bd19a9a69b016f224e40defd76",
+      "type": "prisma:type:fact",
+      "expression": {
+        "kind": "PredicateAssertion",
+        "operator": "AplicaSanción",
+        "subject": "Conductor_CC_1098765432",
+        "value": "SuspensiónLicencia_6Meses"
+      },
+      "context": "ctx:transit_law",
+      "temporalValidity": [
+        "2026-01-01T00:00:00Z",
+        "INF"
+      ],
+      "provenance": {
+        "issuer": "did:prisma:engine",
+        "method": "ModusPonensInference",
+        "authorityLevel": "OFFICIAL"
+      },
+      "dependencies": [
+        "prisma:id:sha256:cf3a2b33dfd19d9517bb3489289ed8e89c4c608ace3459ecbae6d2bff5a52a73",
+        "prisma:id:sha256:afed0ae06aa641fad079c31ffad901141f151f6832bdf014402521d8474ca824",
+        "prisma:id:sha256:7261933fc143a799f415a69bf9b965ff502c5193399c0341a0f4a96e60ddf334"
+      ],
+      "integrityState": "ASSERTED",
+      "version": 1
+    },
+    "proof_tree": {
+      "id": "prisma:id:sha256:4cb6732d11c89d0fa0da157bf7b2453d5d0810b293a9cb11d664b2a45fc0a9d6",
+      "type": "prisma:type:proof",
+      "expression": {
+        "kind": "DeductiveProofTree",
+        "operator": "ModusPonens",
+        "antecedent": [
+          "prisma:id:sha256:cf3a2b33dfd19d9517bb3489289ed8e89c4c608ace3459ecbae6d2bff5a52a73",
+          "prisma:id:sha256:afed0ae06aa641fad079c31ffad901141f151f6832bdf014402521d8474ca824",
+          "prisma:id:sha256:7261933fc143a799f415a69bf9b965ff502c5193399c0341a0f4a96e60ddf334"
+        ],
+        "consequent": {
+          "kind": "PredicateAssertion",
+          "operator": "AplicaSanción",
+          "subject": "Conductor_CC_1098765432",
+          "value": "SuspensiónLicencia_6Meses"
+        }
+      },
+      "context": "ctx:transit_law",
+      "temporalValidity": [
+        "2026-01-01T00:00:00Z",
+        "INF"
+      ],
+      "provenance": {
+        "issuer": "did:prisma:engine",
+        "method": "ModusPonensInference",
+        "authorityLevel": "OFFICIAL"
+      },
+      "dependencies": [
+        "prisma:id:sha256:cf3a2b33dfd19d9517bb3489289ed8e89c4c608ace3459ecbae6d2bff5a52a73",
+        "prisma:id:sha256:afed0ae06aa641fad079c31ffad901141f151f6832bdf014402521d8474ca824",
+        "prisma:id:sha256:7261933fc143a799f415a69bf9b965ff502c5193399c0341a0f4a96e60ddf334"
+      ],
+      "integrityState": "ASSERTED",
+      "version": 1
+    },
+    "materialized_knowledge": {
+      "id": "prisma:id:sha256:609c8dc225cbc67659ab104ced9fd1751ca57bcdaf8747f1220c320a797e6e1f",
+      "type": "prisma:type:materialized",
+      "expression": {
+        "kind": "PredicateAssertion",
+        "operator": "AplicaSanción",
+        "subject": "Conductor_CC_1098765432",
+        "value": "SuspensiónLicencia_6Meses"
+      },
+      "context": "ctx:transit_law",
+      "temporalValidity": [
+        "2026-01-01T00:00:00Z",
+        "INF"
+      ],
+      "provenance": {
+        "issuer": "did:prisma:engine",
+        "method": "ModusPonensInference",
+        "authorityLevel": "OFFICIAL"
+      },
+      "dependencies": [
+        "prisma:id:sha256:0a62ae76050f0e56e41e86bc92548c0f2acb76bd19a9a69b016f224e40defd76",
+        "prisma:id:sha256:4cb6732d11c89d0fa0da157bf7b2453d5d0810b293a9cb11d664b2a45fc0a9d6"
+      ],
+      "integrityState": "MATERIALIZED",
+      "version": 1,
+      "proofId": "prisma:id:sha256:4cb6732d11c89d0fa0da157bf7b2453d5d0810b293a9cb11d664b2a45fc0a9d6"
+    },
+    "human_readable_projection": "📋 **Dictamen Legal de Tránsito**\n────────────────────────────────────────────────────────────\n💬 **Conclusión:**\n   Se ha determinado que **Conductor CC 1098765432** recibe como sanción **Suspensión de la Licencia por 6 Meses**.\n\n🔍 **Fundamentación Lógica y Trazabilidad:**\n   • **Método de Deducción:** Modus Ponens (ModusPonens)\n   • **Premisas y Reglas Aplicadas:** 3 objetos interconectados\n   • **Cache de Inferencia:** Deducción calculada en tiempo real\n\n🔒 **Verificación de Integridad y Cero Alucinación (PRISMA PO-1):**\n   • **ID Criptográfico de Conclusión:** `prisma:id:sha256:0a62ae76050f0e56e41e86bc92548c0f2acb76bd19a9a69b016f224e40defd76`\n   • **Hash del Árbol de Prueba (Proof Tree):** `prisma:id:sha256:4cb6732d11c89d0fa0da157bf7b2453d5d0810b293a9cb11d664b2a45fc0a9d6`\n   • **Estado de Validación:** `ASSERTED` | **Alucinación:** 0% (Verificado mecánicamente)\n────────────────────────────────────────────────────────────"
+  }
+}

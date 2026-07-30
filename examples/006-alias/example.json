@@ -1,0 +1,11 @@
+{
+  "id": "prisma:example:006-alias",
+  "description": "Alias Equivalence: USA, United States, United States of America resolve to identical semantic ID",
+  "aliases": [
+    { "term": "USA", "canonicalAST": { "kind": "EntityIdentifier", "uri": "prisma:entity:country:usa" } },
+    { "term": "United States", "canonicalAST": { "kind": "EntityIdentifier", "uri": "prisma:entity:country:usa" } },
+    { "term": "United States of America", "canonicalAST": { "kind": "EntityIdentifier", "uri": "prisma:entity:country:usa" } }
+  ],
+  "expectedSharedIdentity": "prisma:id:sha256:7f3a8b2c4e6f...",
+  "auditTrail": { "semanticEquivalenceVerified": true, "singleIdentityPreserved": true }
+}

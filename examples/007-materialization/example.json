@@ -1,0 +1,19 @@
+{
+  "id": "prisma:example:007-materialization",
+  "description": "Materialized Knowledge: Repeated query hits cached PROOF with O(1) evaluation",
+  "initialQuery": { "kind": "QUERY", "subject": "person:juan", "operator": "esMayorDeEdad" },
+  "firstEvaluation": { "timeMs": 14.2, "status": "COMPUTED", "proofId": "prisma:proof:123" },
+  "materializedObject": {
+    "id": "prisma:mat:sha256:juan_mayor_edad",
+    "type": "prisma:type:materialized",
+    "expression": { "kind": "PredicateAssertion", "operator": "esMayorDeEdad", "subject": "person:juan", "value": true },
+    "context": "prisma:context:co",
+    "temporalValidity": ["2026-01-01T00:00:00Z", "INF"],
+    "provenance": { "issuer": "did:prisma:engine", "method": "ModusPonensInference" },
+    "dependencies": ["prisma:fact:sha256:juan_edad"],
+    "integrityState": "MATERIALIZED",
+    "proofId": "prisma:proof:123"
+  },
+  "subsequentQuery": { "timeMs": 0.04, "status": "CACHE_HIT_O1" },
+  "auditTrail": { "materializationSuccessful": true, "speedupRatio": 355 }
+}

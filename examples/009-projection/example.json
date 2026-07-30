@@ -1,0 +1,18 @@
+{
+  "id": "prisma:example:009-projection",
+  "description": "Projection Purity: Knowledge Object -> Graph -> JSON -> Text -> Embedding preserves identity ID",
+  "originalKnowledgeObject": {
+    "id": "prisma:id:sha256:7f3a8b2c4e6f...",
+    "type": "prisma:type:fact",
+    "expression": { "kind": "PredicateAssertion", "operator": "residesIn", "subject": "person:juan", "value": "city:bogota" },
+    "context": "prisma:context:geo:co",
+    "temporalValidity": ["2026-01-01T00:00:00Z", "INF"]
+  },
+  "projections": {
+    "pi_graph": { "node": "person:juan", "edge": "residesIn", "target": "city:bogota", "derivedId": "prisma:id:sha256:7f3a8b2c4e6f..." },
+    "pi_json": { "json": "{\"context\":\"prisma:context:geo:co\",\"expression\":{...}}", "derivedId": "prisma:id:sha256:7f3a8b2c4e6f..." },
+    "pi_text": { "text": "Juan resides in Bogota.", "derivedId": "prisma:id:sha256:7f3a8b2c4e6f..." },
+    "pi_vector": { "vector": [0.124, -0.891, 0.451], "derivedId": "prisma:id:sha256:7f3a8b2c4e6f..." }
+  },
+  "auditTrail": { "hypothesisH3Verified": true, "identityPreserved": true }
+}

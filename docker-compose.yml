@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  prisma-engine:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      - PORT=8080
+      - PRISMA_ENV=production
+      - DATABASE_URL=postgresql://prisma_admin:SecurePass2026@postgres-db:5432/prisma_prod
+    depends_on:
+      - postgres-db
+    restart: always
+
+  postgres-db:
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_USER: prisma_admin
+      POSTGRES_PASSWORD: SecurePass2026
+      POSTGRES_DB: prisma_prod
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    restart: always
+
+volumes:
+  postgres_data:
