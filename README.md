@@ -100,8 +100,9 @@ memory.save_context(
 ```
 
 > [!WARNING]
-> **Nota de Recomendación sobre Cuotas de LLMs Externos:**  
-> Al realizar pruebas masivas o ingesta de documentos en gran volumen (como en el benchmark multisectorial de 13.7M operaciones), se recomienda priorizar el **Fast Path (SLM Local)** de PRISMA, el cual procesa deducciones en **1ms sin consumo de tokens**. Ejecutar millones de peticiones masivas directamente contra APIs externas (como Claude o OpenAI) puede agotar rápidamente sus límites y cuotas diarias gratuitas. Se aconseja reservar las llamadas a APIs de LLM externas exclusivamente para análisis de texto complejo o consultas puntuales que lo requieran.
+> **Nota sobre Pruebas de Carga y Agentes de IA Externos:**  
+> El motor PRISMA procesa las deducciones e inferencias de la API localmente en microsegundos sin costo de tokens. Sin embargo, si un evaluador conecta un agente de IA externo (como Claude o GPT) para generar miles de consultas automatizadas en lote, la cuota de la API de dicho proveedor de IA externo podría agotarse en su cuenta personal. Se recomienda realizar pruebas masivas de volumen directamente mediante peticiones HTTP a la API de PRISMA, o reservar los agentes de IA externos para consultas puntuales.
+
 
 ---
 
