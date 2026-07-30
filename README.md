@@ -123,12 +123,10 @@ Durante esta **fase previa al lanzamiento oficial**, la API de PRISMA es **total
 
 Durante la fase de validación y pruebas públicas, la API en la nube estará activa en ventanas de horario específicas para que la comunidad e inversores puedan realizar consultas en vivo:
 
-- 🕒 **Ventanas de Disponibilidad Servidor en Vivo:**
-  - **Lunes a Viernes:** 06:00 PM – 08:00 PM (Hora Colombia / UTC-5)
-  - **Sábados:** 02:00 PM – 08:00 PM (Hora Colombia / UTC-5)
-  - **Domingos:** 10:00 AM – 05:00 PM (Hora Colombia / UTC-5)
+- 🔗 **URL de API Pública Activa (Hoy):** `https://indie-nose-often-winston.trycloudflare.com/api/v1`
+- 📜 **Especificación OpenAPI (JSON):** `https://indie-nose-often-winston.trycloudflare.com/openapi.json`
+- 🧪 **Documentación Interactiva (Swagger):** `https://indie-nose-often-winston.trycloudflare.com/docs`
 
-- 🔗 **URL de API Pública:** `https://[SUBDOMINIO-CLOUDFLARE].trycloudflare.com/api/v1` *(Verificar estado en la consola)*
 
 ---
 
