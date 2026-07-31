@@ -711,7 +711,7 @@ Rule_1:  "INVALIDACION EN CASCADA AUTOMATICA (PO-2)"`,
             
             try {
                 // Try executing against the local/cloud API live endpoint if online!
-                const res = await fetch('https://indie-nose-often-winston.trycloudflare.com/api/v1/system_status');
+                const res = await fetch('https://test-demo-tunnel-99.trycloudflare.com/api/v1/system_status');
                 if (res.ok) {
                     const data = await res.json();
                     data.live_test = "Conexión a Servidor PRISMA OK";

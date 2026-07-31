@@ -13,7 +13,7 @@ Esta guía explica paso a paso cómo conectar cualquier **Custom GPT** o **Agent
 ### Paso 2: Importar la Especificación OpenAPI (Actions)
 1. En la sección **Actions** (Acciones abajo en la configuración), haz clic en **Create new action**.
 2. En el campo **Import from URL**, ingresa la URL activa de tu servidor PRISMA:
-   `https://indie-nose-often-winston.trycloudflare.com/openapi.json`
+   `https://test-demo-tunnel-99.trycloudflare.com/openapi.json`
 
 3. Haz clic en **Import**. ChatGPT importará automáticamente todos los endpoints de inferencia determinista (`/api/v1/infer`), ingesta (`/api/v1/ingest/text`) y diagnóstico (`/api/v1/system_status`).
 

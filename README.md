@@ -123,9 +123,9 @@ Durante esta **fase previa al lanzamiento oficial**, la API de PRISMA es **total
 
 Durante la fase de validación y pruebas públicas, la API en la nube estará activa en ventanas de horario específicas para que la comunidad e inversores puedan realizar consultas en vivo:
 
-- 🔗 **URL de API Pública Activa (Hoy):** `https://indie-nose-often-winston.trycloudflare.com/api/v1`
-- 📜 **Especificación OpenAPI (JSON):** `https://indie-nose-often-winston.trycloudflare.com/openapi.json`
-- 🧪 **Documentación Interactiva (Swagger):** `https://indie-nose-often-winston.trycloudflare.com/docs`
+- 🔗 **URL de API Pública Activa (Hoy):** `https://test-demo-tunnel-99.trycloudflare.com/api/v1`
+- 📜 **Especificación OpenAPI (JSON):** `https://test-demo-tunnel-99.trycloudflare.com/openapi.json`
+- 🧪 **Documentación Interactiva (Swagger):** `https://test-demo-tunnel-99.trycloudflare.com/docs`
 
 
 

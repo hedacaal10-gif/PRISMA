@@ -1,9 +1,9 @@
 # 🔮 Guía de Integración y Prompt de Sistema para Claude & Asistentes de IA (PRISMA v4.0.0)
 
 > 🌐 **URL de API Pública Activa (Servidor en Vivo):**  
-> `https://indie-nose-often-winston.trycloudflare.com`  
-> 📜 **OpenAPI Spec (Para Custom GPTs / Claude Tools):** `https://indie-nose-often-winston.trycloudflare.com/openapi.json`  
-> 🧪 **Documentación Swagger Interactiva:** `https://indie-nose-often-winston.trycloudflare.com/docs`
+> `https://test-demo-tunnel-99.trycloudflare.com`  
+> 📜 **OpenAPI Spec (Para Custom GPTs / Claude Tools):** `https://test-demo-tunnel-99.trycloudflare.com/openapi.json`  
+> 🧪 **Documentación Swagger Interactiva:** `https://test-demo-tunnel-99.trycloudflare.com/docs`
 
 ---
 
