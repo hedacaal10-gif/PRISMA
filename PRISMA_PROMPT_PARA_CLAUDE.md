@@ -1,6 +1,12 @@
-# 🔮 CONTEXTO DE PROYECTO: PRISMA CORE ENGINE
+# 🔮 CONTEXTO DE PROYECTO: PRISMA CORE ENGINE v4.0.0
+
+> 🌐 **URL de API Pública Activa (Servidor en Vivo):**  
+> `https://indie-nose-often-winston.trycloudflare.com`  
+> 📜 **OpenAPI Spec (Para ChatGPT Actions):** `https://indie-nose-often-winston.trycloudflare.com/openapi.json`  
+> 🧪 **Swagger Docs:** `https://indie-nose-often-winston.trycloudflare.com/docs`
 
 Hola Claude. Estoy compartiendo contigo el código y la arquitectura de mi proyecto **PRISMA** (del cual soy autor y tengo el registro de propiedad intelectual en trámite ante la DNDA en Colombia). 
+
 
 PRISMA es un **Motor de Inferencia Neuro-Simbólico y API Gateway B2B** diseñado para tomar texto en lenguaje natural de libros, expedientes o contratos, estructurarlos lógicamente en hechos y reglas simbólicas en un Knowledge Space (Espacio de Conocimiento) libre de alucinaciones, y ejecutar razonamiento formal (Modus Ponens).
 
