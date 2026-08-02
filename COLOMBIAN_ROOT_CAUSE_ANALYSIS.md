@@ -1,5 +1,35 @@
-# Colombian Corpus Root-Cause Analysis
-## Why Spanish 50% vs. English 74%
+# Colombian Corpus Root-Cause Analysis — ⚠️ RETRACTED
+
+> **RETRACTION NOTICE (2026-08-01, same session).**
+>
+> **Do not use the analysis below.** It was computed against a corpus version
+> that was itself broken. `scratch/co_extract_verbatim_quotes.py` had replaced
+> each `fact_summary` with an arbitrary ±600-character window around a
+> "prueba de referencia" mention. In monthly bulletins those windows landed on
+> the publication's *topical index headers* — which state the holding outright
+> (e.g. co_pr_010's text contained `"es admisible como prueba de referencia, de
+> pleno derecho"`) — as well as PDF metadata and mid-word fragments.
+>
+> Consequences for everything below:
+> - The 50% figure it explains was never a measurement of authentic court text.
+> - The per-case feature values (IsStatement / MadeOutOfCourt / OfferedForTruth)
+>   for co_pr_006–012 were extracted from index headers, not case narratives.
+> - The categorization (4 extraction bugs / 1 domain gap / 1 rule bug) is
+>   therefore unreliable.
+> - The "expected ceiling 11/12 (92%)" projection is meaningless.
+>
+> The corpus has been reverted to the paraphrase version and the baseline
+> re-verified at **7/12 = 58.33%**. A "Priority 1" nominalization heuristic
+> derived from the failing rows below was also implemented and then reverted —
+> it constituted test-set tuning, which `co_prueba_referencia_eval.py`'s
+> docstring explicitly forbids.
+>
+> Retained below only as a record of what was done. See
+> `PHASE1_PHASE2_COMPLETION_REPORT.md` for the corrected account.
+
+---
+
+## (Retracted content follows)
 
 **Date:** 2026-08-01  
 **Scope:** 6 misclassified cases in N=12 Colombian dataset  
